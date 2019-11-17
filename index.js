@@ -7,9 +7,9 @@ let filePath = 'graduate.json';
 fs.readFile(filePath, 'utf8', (err, json) => {
     if (err) console.log(err);
 
-    // json数据
+    // 原始json数据
     let data = JSON.parse(json).rows;
-    // excel表格工作区
+    // 空的excel表格工作区
     let workbook = xlsx.utils.book_new();
     // 数据表
     let excelData = [];
@@ -32,7 +32,7 @@ fs.readFile(filePath, 'utf8', (err, json) => {
         'SJHM'
     ]
 
-    // 读取数据, 将数据写入表格中
+    // 数据获取的时候是按照页来获取的, 所以这里用页做区分
     for (let page of data) {
         let rows = page.datas.cxkbmjsktdxz.rows;
 

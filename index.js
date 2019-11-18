@@ -1,8 +1,8 @@
 let xlsx = require('xlsx');
 let fs = require('fs');
 
-let filePath = 'graduate.json';
-// let filePath = 'testData.json';
+// let filePath = 'graduate.json';
+let filePath = 'testData.json';
 
 fs.readFile(filePath, 'utf8', (err, json) => {
     if (err) console.log(err);
